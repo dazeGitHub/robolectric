@@ -117,7 +117,7 @@ public class InvokeDynamicSupport {
 
   private static MethodHandle bindCallSite(MethodCallSite site) throws IllegalAccessException {
     MethodHandle mh =
-        RobolectricInternals.findShadowMethod(site.getCaller(), site.getName(), site.type(),
+        RobolectricInternals.findShadowMethodHandle(site.getCaller(), site.getName(), site.type(),
             site.isStatic());
 
     if (mh == null) {
